@@ -4,8 +4,6 @@ var textBox;
 var pictureBearer;
 var levelText;
 var score = 0;
-//implement timer with setinterval
-//portal to enter quiz that resizes browser and can not change link 
 
 var level = 0;
 
