@@ -4,9 +4,7 @@ var textBox;
 var pictureBearer;
 var levelText;
 var score = 0;
-
 var level = 0;
-
 var answers = ["chemistry", "physics", "biology", "computer science", "art"]
 
 window.onload = function () {
@@ -51,8 +49,8 @@ function answerIncorrect() {
     wrongMusic.play();
     document.getElementById("centeredDiv").style.display = "none";
     document.getElementById("badAnswer").style.display = "";
+    clearText();
     setTimeout(function () { location.reload(); }, 4000);
-
 }
 
 function displayDoggy() {
@@ -62,7 +60,7 @@ function displayDoggy() {
 
 function hideDoggy() {
     correctMusic.pause();
-    textBox.value = "";
+    clearText();
     changeImage();
     document.getElementById("centeredDiv").style.display = "";
     document.getElementById("doggy").style.display = "none";
@@ -75,4 +73,8 @@ function timer(seconds) {
 function changeImage() {
     levelText.innerHTML = "Level " + (level + 1);
     pictureBearer.src = "img/" + (answers[level].split(" ").join("")) + ".jpg";
+}
+
+function clearText() {
+    textBox.value = "";
 }
